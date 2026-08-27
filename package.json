@@ -1,0 +1,16 @@
+{
+  "name": "helo-web-mcp",
+  "private": true,
+  "scripts": {
+    "dev": "bun ./index.html --console",
+    "build": "bun build ./index.html --outdir=dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "webmcp-types": "^0.1.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
