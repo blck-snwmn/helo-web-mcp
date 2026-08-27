@@ -1,7 +1,9 @@
 # helo-web-mcp
 
-Minimal WebMCP demo using Bun and TypeScript. It registers an
-`increment_counter` tool that updates the counter shown on the page.
+Minimal WebMCP demo using Bun and TypeScript. It registers two tools:
+
+- `get_counter` reads the counter without changing it.
+- `increment_counter` updates the counter shown on the page.
 
 No package installation, MCP server, or Gemini API key is required to register
 and execute the tool manually.
@@ -28,7 +30,8 @@ and execute the tool manually.
 
 1. Open Chrome DevTools.
 2. Select **Application > WebMCP**.
-3. Select `increment_counter`, enter an `amount`, and run the tool.
+3. Select either `get_counter` or `increment_counter` and run the tool. When
+   running `increment_counter`, enter an `amount`.
 
 The counter on the page should increase by the specified amount. This test does
 not use an AI model or require an API key.
@@ -47,7 +50,7 @@ To let an AI model choose and call the tool from a prompt:
 5. Send a prompt such as:
 
    ```text
-   Increase the counter by 5.
+   Check the current counter and increase it until it reaches 10.
    ```
 
 The API key is needed only because the Inspector calls the Gemini API for its

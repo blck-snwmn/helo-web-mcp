@@ -10,6 +10,30 @@ let count = 0;
 if (!document.modelContext) {
   status.textContent = "WebMCP is not enabled in this browser.";
 } else {
+  const registrationController = new AbortController();
+
+  if (import.meta.hot) {
+    import.meta.hot.dispose(() => {
+      registrationController.abort();
+    });
+  }
+
+  await document.modelContext.registerTool({
+    name: "get_counter",
+    description: "Get the current value of the counter displayed on this page.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false,
+    },
+    annotations: {
+      readOnlyHint: true,
+    },
+    execute: async () => {
+      return JSON.stringify({ count });
+    },
+  }, { signal: registrationController.signal });
+
   await document.modelContext.registerTool({
     name: "increment_counter",
     description: "Increase the counter displayed on this page.",
@@ -38,7 +62,7 @@ if (!document.modelContext) {
       counter.value = String(count);
       return `Counter increased by ${amount}. Current value: ${count}`;
     },
-  });
+  }, { signal: registrationController.signal });
 
-  status.textContent = "WebMCP tool registered: increment_counter";
+  status.textContent = "WebMCP tools registered: get_counter, increment_counter";
 }
