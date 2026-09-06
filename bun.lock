@@ -9,7 +9,7 @@
         "webmcp-types": "^0.1.5",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5 || ^7.0.0",
       },
     },
   },
