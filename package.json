@@ -1,6 +1,7 @@
 {
   "name": "helo-web-mcp",
   "private": true,
+  "packageManager": "bun@1.4.0",
   "scripts": {
     "dev": "bun ./index.html --console",
     "build": "bun build ./index.html --outdir=dist",
