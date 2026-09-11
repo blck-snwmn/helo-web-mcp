@@ -6,7 +6,7 @@
       "name": "helo-web-mcp",
       "devDependencies": {
         "@types/bun": "latest",
-        "webmcp-types": "0.1.6",
+        "webmcp-types": "0.1.7",
       },
       "peerDependencies": {
         "typescript": "^5 || ^7.0.0",
@@ -24,6 +24,6 @@
 
     "undici-types": ["undici-types@8.3.0", "", {}, "sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ=="],
 
-    "webmcp-types": ["webmcp-types@0.1.6", "", {}, "sha512-vWYNhhBXQhP4flPIk3sJuzsonPGSTdDyhWgpmPYCNdpIcLHJgjHE51lU0S7gi+UtdxO84FsCnvSJaMfLGWP+3Q=="],
+    "webmcp-types": ["webmcp-types@0.1.7", "", {}, "sha512-70YszESbCx+ozBejmBPTSc0hMyXim+/Kpj8UOZsHd36ANcYqIfkDbMBTTn5y+tQzQYUYN1x2R+5PseKJtVaLqA=="],
   }
 }
